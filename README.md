@@ -57,6 +57,6 @@ This is a re-implementation of [Dasam et al.'s]([https://arxiv.org/abs/2010.0110
 
 ## Experiment Result
 
-<img src="./result.png" alt="Result" width="1024"/>'
+<img src="./result2.png" alt="Result" width="1024"/>'
 
 
