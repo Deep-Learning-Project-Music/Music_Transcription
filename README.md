@@ -64,4 +64,62 @@ Below is an image that shows one of the predicted scores from the ASR model
 <img src="./proof-midi.png" alt="Result" width="1024"/>'
 
 
+Here is a [Demo Video](https://drive.google.com/file/d/1n9NULtk3E22ymLHmmmjRcMkback2Kt1S/view?usp=drive_link) of our result.
+
+
 Below is the README of the [original repository](https://github.com/jdasam/low-latency-amt/blob/master/README.md)
+
+## Instructions
+
+This project is quite resource-intensive; 32 GB or larger system memory and 8 GB or larger GPU memory is recommended. 
+
+### Downloading Dataset
+
+The `data` subdirectory already contains the MAPS database. To download the Maestro dataset, first make sure that you have `ffmpeg` executable and run `prepare_maestro.sh` script:
+
+```bash
+ffmpeg -version
+cd data
+./prepare_maestro.sh
+```
+
+This will download the full Maestro dataset from Google's server and automatically unzip and encode them as FLAC files in order to save storage. However, you'll still need about 200 GB of space for intermediate storage.
+
+### Training
+
+All package requirements are contained in `requirements.txt`. To train the model, run:
+
+```bash
+pip install -r requirements.txt
+python train.py
+```
+
+
+```bash
+python train.py  --iterations=45000 --checkpoint_interval=45000
+```
+
+### Testing
+
+To evaluate the trained model using the MAPS database, run the following command to calculate the note and frame metrics:
+
+```bash
+python evaluate.py runs/model/model-100000.pt --save-path output/
+```
+
+## Implementation Details
+
+This implementation contains a few of the additional improvements on the model that were reported in the Maestro paper, including:
+
+* Offset head
+* Increased model capacity, making it 26M parameters by default
+* Gradient stopping of inter-stack connections
+* L2 Gradient clipping of each parameter at 3
+* Using the HTK mel frequencies
+
+Meanwhile, this implementation does not include the following features:
+
+* Variable-length input sequences that slices at silence or zero crossings
+* Harmonically decaying weights on the frame loss
+
+Despite these, this implementation is able to achieve a comparable performance to what is reported on the Maestro paper as the performance without data augmentation.
