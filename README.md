@@ -3,7 +3,7 @@
 This is a re-implementation of [Dasam et al.'s]([https://arxiv.org/abs/2010.01104]) multi-state autoregressive AMT model.
 
 ## Directory Structure
-.
+```
 ├── LICENSE
 ├── __pycache__
 │   ├── evaluate.cpython-310.pyc
@@ -53,9 +53,10 @@ This is a re-implementation of [Dasam et al.'s]([https://arxiv.org/abs/2010.0110
 ├── test.ipynb
 ├── train_copy.py
 └── transcribe.py
+```
 
 ## Experiment Result
 
-<img src="drawing.jpg" alt="drawing" width="200"/>'
+<img src="./result.png" alt="Result" width="1024"/>'
 
 
