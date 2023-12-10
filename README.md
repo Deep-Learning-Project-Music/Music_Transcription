@@ -57,8 +57,11 @@ This is a re-implementation of [Dasam et al.'s](https://arxiv.org/abs/2010.01104
 
 ## Experiment Result
 
+<img src="./result2.png" alt="Result" width="1024"/>'
+
+Below is an image that shows one of the predicted scores from the ASR model
+
 <img src="./proof-midi.png" alt="Result" width="1024"/>'
 
-<img src="./result2.png" alt="Result" width="1024"/>'
 
 Below is the README of the [original repository](https://github.com/jdasam/low-latency-amt/blob/master/README.md)
