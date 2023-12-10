@@ -1,6 +1,6 @@
 # Re-implementation of Polyphonic Piano Transcription
 
-This is a re-implementation of [Dasam et al.'s]([https://arxiv.org/abs/2010.01104]) multi-state autoregressive AMT model.
+This is a re-implementation of [Dasam et al.'s](https://arxiv.org/abs/2010.01104) multi-state autoregressive AMT model.
 
 ## Directory Structure
 ```
@@ -57,6 +57,8 @@ This is a re-implementation of [Dasam et al.'s]([https://arxiv.org/abs/2010.0110
 
 ## Experiment Result
 
+<img src="./proof-midi.png" alt="Result" width="1024"/>'
+
 <img src="./result2.png" alt="Result" width="1024"/>'
 
-
+Below is the README of the [original repository](https://github.com/jdasam/low-latency-amt/blob/master/README.md)
